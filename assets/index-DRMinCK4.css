@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');:root {
+  --body-color: hsl(226, 43%, 10%);
+  --user-box: hsl(246, 80%, 60%);
+  --data-box: hsl(235, 46%, 20%);
+  --hvr-clr: hsl(235, 45%, 61%);
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--body-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================
+   MAIN GRID
+========================= */
+
+#root {
+  width: 800px;
+  min-height: 350px;
+  height: auto;
+  margin: 30px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  grid-template-areas:
+    "main box box box"
+    "main box box box";
+  gap: 30px;
+}
+
+
+/* =========================
+   USER SECTION
+========================= */
+
+#user {
+  grid-area: main;
+  background-color: var(--data-box);
+  border-radius: 10px;
+  height: 100%;
+}
+
+
+#user .intro {
+  background-color: var(--user-box);
+  border-radius: 10px;
+  height: 65%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#user .intro img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+
+/* =========================
+   LIST
+========================= */
+
+ul {
+  /* display: flex;
+  flex-direction: column;
+
+  justify-content: space-around; */
+
+  margin: 20px;
+}
+
+ul li {
+  line-height: 30px;
+  list-style: none;
+  cursor: pointer;
+}
+
+
+/* =========================
+   DATA BOX
+========================= */
+
+.bgimg {
+  /* height: 200px; */
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 150px;
+  height: auto;
+  display: grid;
+}
+
+.bgimg>img {
+  width: 50px;
+  margin-top: -7px;
+  margin-left: auto;
+  margin-right: 10px;
+  grid-area: 1 / 1;
+}
+
+.box {
+  width: 100%;
+  height: 80%;
+  padding: 20px;
+
+  background-color: var(--data-box);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  grid-area: 1 / 1;
+  align-self: end;
+
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: var(--hvr-clr);
+}
+
+.box .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box .head img {
+  width: 15px;
+  height: auto;
+}
+
+
+.bgimg .box .bottom {
+  height: 100%;
+  margin-top: 17px;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 375px) {
+
+  body {
+    align-items: flex-start;
+  }
+
+  #root {
+    width: 100%;
+    height: auto;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+      "main"
+      "box"
+      "box"
+      "box"
+      "box"
+      "box"
+      "box";
+  }
+
+  #user .intro {
+    flex-direction: row;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bgimg .box .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #user .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+
+  #user .intro img {
+    width: 70px;
+    height: 70%;
+  }
+
+  .bgimg .box .bottom {
+    margin-top: 15px;
+  }
+}
+
+:root {
+    --clr1: hsl(235, 45%, 61%);
+    --wht: hsl(236, 100%, 87%);
+}
+
+
+/* =========================
+   USER TEXT
+========================= */
+* {
+    /* border: 1px solid red; */
+    text-transform: capitalize;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#userpera {
+    font-size: 11px;
+    font-weight: 100;
+    line-height: 1.5;
+    color: hsl(236, 100%, 87%);
+}
+
+#username {
+    display: block;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   TIMEFRAME TEXT
+========================= */
+
+.timeframes li {
+    font-size: 13px;
+    text-transform: capitalize;
+    line-height: 30px;
+    color: var(--clr1);
+
+}
+
+.timeframes li:hover {
+    color: white;
+}
+
+
+/* =========================
+   DATA BOX TEXT
+========================= */
+
+.box .head span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.box .bottom {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 40px;
+}
+
+.current {
+    font-size: 100%;
+    font-weight: 200;
+    line-height: 1;
+}
+
+.previous {
+    font-size: 10px;
+    color: hsl(236, 100%, 87%);
+}
+
+/* =========================
+FOR MOBILE
+========================= */
+@media screen and (max-width: 375px) {
+    .bottom .current {
+        font-size: 80%;
+    }
+
+    .bottom .previous {
+        font-size: 14px;
+    }
+
+
+    #user .intro #userpera {
+        font-size: 13px;
+    }
+    #user .intro #userpera #username {
+        font-size: 24px;
+    }
+
+    #user ul li {
+        font-size: 16px;
+    }
+
+    .box .head span {
+        font-size: 13px;
+    }
+}
